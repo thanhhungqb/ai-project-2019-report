@@ -1,0 +1,91 @@
+@article{Bay06,
+abstract = {In this paper, we present a novel scale- and rotation-invariant interest point detector and descriptor, coined SURF (Speeded Up Robust Features). It approximates or even outperforms previously proposed schemes with respect to repeatability, distinctiveness, and robustness, yet can be computed and compared much faster. This is achieved by relying on integral images for image convolutions; by building on the strengths of the leading existing detectors and descriptors (in casu, using a Hessian matrix-based measure for the detector, and a distribution-based descriptor); and by simplifying these methods to the essential. This leads to a combination of novel detection, description, and matching steps. The paper presents experimental results on a standard evaluation set, as well as on imagery obtained in the context of a real-life object recognition application. Both show SURF's strong performance},
+author = {Bay, Herbert and Tuytelaars, Tinne and Gool, Luc Van},
+doi = {10.1007/11744023_32},
+file = {:home/hung/Documents/Mendeley Desktop/2006 - Bay, Tuytelaars, Gool - SURF Speeded Up Robust Features.pdf:pdf},
+journal = {Lecture Notes in Computer Science},
+keywords = {Hessian Matrix Interest Point Integral Image Robus},
+pages = {404--417},
+title = {{SURF: Speeded Up Robust Features}},
+volume = {3951},
+year = {2006}
+}
+
+@article{Lowe2004,
+abstract = {This paper presents a method for extracting distinctive invariant features from images that can be used to perform reliable matching between different views of an object or scene. The features are invariant to image scale and rotation, and are shown to provide robust matching across a a substantial range of affine distortion , change in 3D viewpoint, addition of noise, and change in illumination. The features are highly distinctive, in the sense that a single feature can be correctly matched with high probability against a large database of features from many images. This paper also describes an approach to using these features for object recognition. The recognition proceeds by matching individual features to a database of features from known objects using a fast nearest-neighbor algorithm, followed by a Hough transform to identify clusters belonging to a single object, and finally performing verification through least-squares solution for consistent pose parameters. This approach to recognition can robustly identify objects among clutter and occlusion while achieving near real-time performance.},
+author = {Lowe, David G},
+doi = {10.1023/B:VISI.0000029664.99615.94},
+file = {:home/hung/Documents/Mendeley Desktop/2004 - Lowe - Distinctive Image Features from Scale-Invariant Keypoints.pdf:pdf},
+journal = {International Journal of Computer Vision},
+pages = {1--28},
+title = {{Distinctive Image Features from Scale-Invariant Keypoints}},
+year = {2004}
+}
+
+
+@article{Teh2006,hdp2006,
+abstract = {We consider problems involving groups of data where each observation within a group is a draw from a mixture model and where it is desirable to share mixture components between groups. We assume that the number of mixture components is unknown a priori and is to be inferred from the data. In this setting it is natural to consider sets of Dirichlet processes, one for each group, where the well-known clustering property of the Dirichlet process provides a nonparametric prior for the number of mixture components within each group. Given our desire to tie the mixture models in the various groups, we consider a hierarchical model, specifically one in which the base measure for the child Dirichlet processes is itself distributed according to a Dirichlet process. Such a base measure being discrete, the child Dirichlet processes necessarily share atoms. Thus, as desired, the mixture models in the different groups necessarily share mixture components. We discuss representations of hierarchical Dirichlet processes in terms of a stick-breaking process, and a generalization of the Chinese restaurant process that we refer to as the “Chinese restaurant franchise.” We present Markov chain Monte Carlo algorithms for posterior inference in hierarchical Dirichlet process mixtures and describe applications to problems in information retrieval and text modeling.},
+author = {Teh, Yee Whye and Jordan, Michael I. and Beal, Matthew J. and Blei, David M.},
+doi = {10.1198/016214506000000302},
+file = {:home/hung/Documents/Mendeley Desktop/2006 - Teh et al. - Hierarchical Dirichlet processes.pdf:pdf},
+issn = {01621459},
+journal = {Journal of the American Statistical Association},
+keywords = {Clustering,Hierarchical model,Markov chain Monte Carlo,Mixture model,Nonparametric Bayesian statistics},
+number = {476},
+pages = {1566--1581},
+title = {{Hierarchical Dirichlet processes}},
+volume = {101},
+year = {2006}
+}
+
+@techreport{Hu2009,
+author = {Hu, Diane and Saul, Lawrence},
+file = {:home/hung/Documents/Mendeley Desktop/2009 - Hu, Saul - Latent Dirichlet Allocation for Text , Images , and Music.pdf:pdf},
+pages = {1--19},
+title = {{Latent Dirichlet Allocation for Text , Images , and Music}},
+year = {2009}
+}
+
+
+@inproceedings{Cao2007,
+abstract = {We present a novel generative model for simultaneously recognizing and segmenting object and scene classes. Our model is inspired by the traditional bag of words represen- tation of texts and images as well as a number of related generative models, including probabilistic Latent Sematic Analysis (pLSA) and Latent Dirichlet Allocation (LDA). A major drawback of the pLSA and LDA models is the as- sumption that each patch in the image is independently gen- erated given its corresponding latent topic. While such rep- resentation provide an efficient computational method, it lacks the power to describe the visually coherent images and scenes. Instead, we propose a spatially coherent la- tent topic model (Spatial-LTM). Spatial-LTM represents an image containing objects in a hierarchical way by over- segmented image regions of homogeneous appearances and the salient image patches within the regions. Only one sin- gle latent topic is assigned to the image patches within each region, enforcing the spatial coherency of the model. This idea gives rise to the following merits of Spatial-LTM: (1) Spatial-LTM provides a unified representation for spatially coherent bag of words topic models; (2) Spatial-LTM can simultaneously segment and classify objects, even in the case of occlusion and multiple instances; and (3) Spatial- LTM can be trained either unsupervised or supervised, as well as when partial object labels are provided. We verify the success of our model in a number of segmentation and classification experiments.},
+author = {Cao, Liangliang and Fei-Fei, Li},
+booktitle = {ICCV},
+file = {:home/hung/Documents/Mendeley Desktop/2007 - Cao, Fei-Fei - Spatially coherent latent topic model for concurrent object segmentation and classification.pdf:pdf},
+number = {December},
+pages = {1--8},
+title = {{Spatially coherent latent topic model for concurrent object segmentation and classification}},
+url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4408965},
+year = {2007}
+}
+@article{Blei2003,
+abstract = {We describe latent Dirichlet allocation (LDA), a generative probabilistic model for collections of discrete data such as text corpora. LDA is a three-level hierarchical Bayesian model, in which each item of a collection is modeled as a finite mixture over an underlying set of topics. Each topic is, in turn, modeled as an infinite mixture over an underlying set of topic probabilities. In the context of text modeling, the topic probabilities provide an explicit representation of a document. We present efficient approximate inference techniques based on variational methods and an EM algorithm for empirical Bayes parameter estimation. We report results in document modeling, text classification, and collaborative filtering, comparing to a mixture of unigrams model and the probabilistic LSI model.},
+archivePrefix = {arXiv},
+arxivId = {1111.6189v1},
+author = {Blei, David M and Edu, Blei@cs Berkeley and Ng, Andrew Y and Edu, Ang@cs Stanford and Jordan, Michael I and Edu, Jordan@cs Berkeley},
+doi = {10.1162/jmlr.2003.3.4-5.993},
+eprint = {1111.6189v1},
+file = {:home/hung/Documents/Mendeley Desktop/2003 - Blei et al. - Latent Dirichlet Allocation.pdf:pdf},
+isbn = {9781577352815},
+issn = {15324435},
+journal = {Journal of Machine Learning Research},
+pages = {993--1022},
+pmid = {21362469},
+title = {{Latent Dirichlet Allocation}},
+volume = {3},
+year = {2003}
+}
+
+@article{Feng2010,
+abstract = {Image annotation, the task of automatically generating description words for a picture, is a key component in various image search and retrieval applications. Creating image databases for model development is, however, costly and time consuming, since the keywords must be hand-coded and the process repeated for new collections. In this work we exploit the vast resource of images and documents available on the web for developing image annotation models without any human involvement. We describe a probabilistic model based on the assumption that images and their co-occurring textual data are generated by mixtures of latent topics. We show that this model outperforms previously proposed approaches when applied to image annotation and the related task of text illustration despite the noisy nature of our dataset. {\textcopyright} 2010 Association for Computational Linguistics.},
+author = {Feng, Yansong and Lapata, Mirella},
+file = {:home/hung/Documents/Mendeley Desktop/2010 - Feng, Lapata - Topic models for image annotation and text illustration.pdf:pdf},
+isbn = {1932432655},
+journal = {Proc. of 2010 Annual Conference of the North American Chapter of the Association for Computational Linguistics (Human Language Technologies)},
+number = {June},
+pages = {831--839},
+pmid = {1858124},
+title = {{Topic models for image annotation and text illustration}},
+url = {http://portal.acm.org/citation.cfm?id=1858124},
+year = {2010}
+}
