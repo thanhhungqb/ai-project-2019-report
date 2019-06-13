@@ -39,35 +39,44 @@
 % -----------------------------------
 \section{Introduction}
 \begin{frame}{Facial emotion recognition (FER)}
-\begin{figure} [h!]
+
+\begin{figure}[h!]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
   \tiny Surprise & \tiny Fear & \tiny Disgust & \tiny Happiness & \tiny Sadness & \tiny Anger & \tiny Neutral \\
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_00006_aligned-1.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_00027_aligned-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_00031_aligned-3.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_00016_aligned-4.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_00005_aligned-5.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_00047_aligned-6.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_09757_aligned-7.jpg}} \\
+  \includegraphics[width=.1\textwidth]{imgs/train_00006_aligned-1.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_00027_aligned-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_00031_aligned-3.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_00016_aligned-4.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_00005_aligned-5.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_00047_aligned-6.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_09757_aligned-7.jpg} \\
 
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/test_0043_aligned-1-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/test_0274_aligned-2-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_09745_aligned-3-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/test_0055_aligned-4-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/test_0049_aligned-5-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/test_0057_aligned-6-2.jpg}} &
-  \addheight{\includegraphics[width=.1\textwidth]{imgs/train_09759_aligned-7-2.jpg}} \\
+  \includegraphics[width=.1\textwidth]{imgs/test_0043_aligned-1-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/test_0274_aligned-2-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_09745_aligned-3-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/test_0055_aligned-4-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/test_0049_aligned-5-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/test_0057_aligned-6-2.jpg} &
+  \includegraphics[width=.1\textwidth]{imgs/train_09759_aligned-7-2.jpg} \\
   \hline
 \end{tabular}
-\caption{Example images from RAF-DB}
+\caption{Images from RAF-DB}
 \label{fig:raf-db-example}
 \end{figure}
+
 \end{frame}
 
-\begin{frame}{next}
-    
+\begin{frame}{Project objective}
+    \begin{itemize}
+        \item<1-> FER problem
+        \item<2-> Basic emotion
+        \item<3-> Dataset: RAF-DB
+        \item<4-> Feature extractor: SIFT, SUFT, KAZE
+        \item<5-> Method: Bag-of-Words, HDP
+        \item<6-> Classifier: SVM, NB and RF
+    \end{itemize}
 \end{frame}
 
 \section{Related work}
@@ -81,14 +90,25 @@
 \end{frame}
 
 \begin{frame}{Bag-of-Words}
-    
+    \begin{itemize}
+        \item Three groups of features are clustering and build vocabulary
+        \item Image features are converted to vector
+        \item TF-IDF is used to make vector
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Latent topics modeling}
     \begin{itemize}
-        \item<1-> LDA
-        \item<2-> HDP
+        \item<1-> Latent Dirichlet Allocation (LDA)
+        \item<2-> Hierarchical Dirichlet process (HDP)
     \end{itemize}
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=.6\textwidth]{Latent_Dirichlet_allocation.png}
+        \caption{LDA}
+        \label{fig:LDA}
+    \end{figure}
 \end{frame}
 
 \section{System architect}
@@ -102,8 +122,24 @@
 \end{frame}
 
 \section{Experiments and results}
-\begin{frame}{Dataset}
-    RAF-DB
+\begin{frame}{Dataset - RAF-DB}
+    \begin{table}[h!]
+\centering
+\caption{Number image in each class for training and testing} \label{tbl:raf-db-count}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Class} & \textbf{Training} & \textbf{Testing} \\ \hline
+Surprise & 1290 & 329 \\ \hline
+Fear & 281 & 74 \\ \hline
+Disgust & 717 & 160 \\ \hline
+Happiness & 4772 & 1185 \\ \hline
+Sadness & 1982 & 478 \\ \hline
+Anger & 705 & 162 \\ \hline
+Neutral & 2524 & 680 \\ \hline \hline
+\textbf{Average} & \textbf{1753} & \textbf{438} \\ \hline
+\textbf{Total} & \textbf{12271} & \textbf{3068} \\ \hline
+\end{tabular}
+\end{table}
 \end{frame}
 
 \begin{frame}{Configure + ...}
