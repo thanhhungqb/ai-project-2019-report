@@ -104,11 +104,21 @@
     \end{itemize}
     
     \begin{figure}
-        \centering
-        \includegraphics[width=.6\textwidth]{Latent_Dirichlet_allocation.png}
-        \caption{LDA}
-        \label{fig:LDA}
+        % \centering
+        \includegraphics[width=.5\textwidth]{Latent_Dirichlet_allocation-1.png}
+        \caption{LDA} \label{fig:LDA}
     \end{figure}
+    
+    {\tiny
+    $\alpha$ is the parameter of the Dirichlet prior on the per-document topic distributions \\
+    $\beta$ is the parameter of the Dirichlet prior on the per-topic word distribution \\
+$\theta _{i}$ is the topic distribution for document $i$ \\
+$\varphi _{k}$ is the word distribution for topic $k$ \\
+$z_{ij}$ is the topic for the $j^{th}$ word in document $i$ \\
+$w_{ij}$ is the specific word \\
+}
+    \vspace{0.5cm}
+    \textit{\tiny (Source: https://en.wikipedia.org/wiki/Latent\_Dirichlet\_allocation)}
 \end{frame}
 
 \section{System architect}
@@ -142,12 +152,60 @@ Neutral & 2524 & 680 \\ \hline \hline
 \end{table}
 \end{frame}
 
-\begin{frame}{Configure + ...}
+% \begin{frame}{Configure + ...}
     
+% \end{frame}
+
+\begin{frame}{Results - Bag-of-Words}
+    \begin{table}[h!]
+\centering
+\caption{Bag-of-Words results, metric accuracy (\%)} \label{tbl:bag-of-words-metric}
+\begin{tabular}{|l|l|l|}
+\hline
+Classifier & Unbalance & Balanced \\ \hline
+NB & 41.82 & 30.02 \\ \hline
+SVM & 49.0 & 40.64 \\ \hline
+RF & 43.80 & 24.37 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=.8\textwidth]{imgs/upsample-bow-svm.jpg}
+    \caption{\tiny Bag-of-Words confusion matrix on balanced data with SVM}
+    \label{fig:upsample-bow-svm}
+\end{figure}
+
 \end{frame}
 
-\begin{frame}{Results}
-    
+\begin{frame}{Results - Topic modeling}
+    \begin{table}[h!]
+\centering
+\caption{Topic modeling results, metric accuracy (\%)} \label{tbl:topic-modeling-metric}
+\begin{tabular}{|l|l|l|}
+\hline
+Classifier & Unbalance & Balanced \\ \hline
+NB & 39.89 & 22.90 \\ \hline
+SVM & 40.12 & 22.35 \\ \hline
+RF & 43.80 & 23.65 \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Discussion}
+    % Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\caption{Compare results} \label{tbl:topic-modeling-metric}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Classifier}} & \multicolumn{2}{c|}{Bag-of-Words} & \multicolumn{2}{c|}{Topic modeling} \\ \cline{2-5} 
+\multicolumn{1}{|c|}{} & Unbalance & Balanced & Unbalance & Balanced \\ \hline
+NB & 41.82 & 30.2 & 39.89 & 22.90 \\ \hline
+SVM & 49.0 & 40.64 & 40.12 & 22.35 \\ \hline
+RF & 43.80 & 24.37 & 43.80 & 23.65 \\ \hline
+\end{tabular}
+\end{table}
 \end{frame}
 
 % ---------------------------------
